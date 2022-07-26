@@ -20,8 +20,8 @@ ckeditor = CKEditor(app)
 Bootstrap(app)
 
 # CONNECT TO DB
-if os.environ.get('DATABASE_URL?sslmode=require').replace('postgres://', 'postgresql://'):
-    app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL?sslmode=require').replace('postgres://', 'postgresql://')
+if os.environ.get('DATABASE_URL'):
+    app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL').replace('postgres://', 'postgresql://')
 else:
     app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///blog.db"
 
